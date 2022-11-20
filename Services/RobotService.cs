@@ -18,27 +18,47 @@ namespace MAUI_IoRT.Services
 
         public async Task Reverse(DistanceModel distance)
         {
-            throw new NotImplementedException();
+            using (var client = new HttpClient())
+            {
+                string url = $"{_baseUrl}/Robot/Reverse";
+                await client.PostAsJsonAsync<DistanceModel>(url, distance);
+            }
         }
 
         public async Task ReverseLeft(DistanceModel distance)
         {
-            throw new NotImplementedException();
+            using (var client = new HttpClient())
+            {
+                string url = $"{_baseUrl}/Robot/ReverseLeft";
+                await client.PostAsJsonAsync<DistanceModel>(url, distance);
+            }
         }
 
         public async Task ReverseRight(DistanceModel distance)
         {
-            throw new NotImplementedException();
+            using (var client = new HttpClient())
+            {
+                string url = $"{_baseUrl}/Robot/ReverseRight";
+                await client.PostAsJsonAsync<DistanceModel>(url, distance);
+            }
         }
 
         public async Task TurnLeft(DistanceModel distance)
         {
-            throw new NotImplementedException();
+            using (var client = new HttpClient())
+            {
+                string url = $"{_baseUrl}/Robot/TurnLeft";
+                await client.PostAsJsonAsync<DistanceModel>(url, distance);
+            }
         }
 
         public async Task TurnRight(DistanceModel distance)
         {
-            throw new NotImplementedException();
+            using (var client = new HttpClient())
+            {
+                string url = $"{_baseUrl}/Robot/TurnRight";
+                await client.PostAsJsonAsync<DistanceModel>(url, distance);
+            }
         }
     }
 }
