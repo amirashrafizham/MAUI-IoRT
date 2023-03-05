@@ -1,4 +1,4 @@
-@page "/fetchdata"
+@page "/robot"
 @using System.Collections
 @using MAUI_IoRT.Services
 @using MAUI_IoRT.Models
@@ -20,7 +20,7 @@
                 <RadzenBadge BadgeStyle="BadgeStyle.Secondary" Text=@($"{String.Format("{0} cm/s",speed)}") style="font-size: large;" />
                 <br>
                 <RadzenSlider @bind-Value=@speed Min="0" Max="50" TValue="int" Step="5" Change=@(args => OnChange(args, "Speed"))
-                    Class="w-100" />
+                              Class="w-100" />
             </RadzenCard>
         </div>
         <div class="col-lg-6 p-3">
@@ -29,25 +29,25 @@
                 <RadzenBadge BadgeStyle="BadgeStyle.Secondary" Text=@($"{String.Format("{0} s",time)}") style="font-size: large;" />
                 <br>
                 <RadzenSlider @bind-Value=@time Min="0" Max="5" TValue="int" Step="1" Change=@(args => OnChange(args, "Time"))
-                    Class="w-100" />
+                              Class="w-100" />
             </RadzenCard>
         </div>
     </div>
     <br>
     <div class="justify-content-center">
-        <div class="d-flex justify-content-center" >
+        <div class="d-flex justify-content-center">
             <RadzenButton style="width: 180px; background-color:#6c41ff94; margin-right: 5px; margin-left:5px;" IsBusy=@busy Click=@TurnLeft
-                Text="Turn Left" />
+                          Text="Turn Left" />
             <RadzenButton style="width: 180px; background-color:#6c41ffcf; margin-right: 5px; margin-left:5px;" IsBusy=@busy Click=@Forward
-                Text="Forward" />
+                          Text="Forward" />
             <RadzenButton style="width: 180px; background-color:#6c41ff94; margin-right: 5px; margin-left:5px;" IsBusy=@busy Click=@TurnRight
-                Text="Turn Right" />
+                          Text="Turn Right" />
         </div>
         <div class="justify-content-center">
             <img src="images/rover.png" alt="" style="display:block; margin:auto;" width="250" height="200">
         </div>
         <br>
-@*         <div class="row justify-content-center">
+        @*         <div class="row justify-content-center">
                     <div class="column">
                         <img src="http://pi-top.local:8070/video.mjpg" alt="" style="display:block; margin:auto;" width="300" height="250" >
                     </div>
@@ -55,14 +55,14 @@
         <br>
         <div class="d-flex justify-content-center">
             <RadzenButton style="width: 180px; background-color:#414bff94;  margin-right: 5px; margin-left:5px;" IsBusy=@busy Click=@ReverseLeft
-                Text="Reverse Left" />
+                          Text="Reverse Left" />
             <RadzenButton style="width: 180px; background-color:#414bffcf;  margin-right: 5px; margin-left:5px;" IsBusy=@busy Click=@Reverse
-                Text="Reverse" />
+                          Text="Reverse" />
             <RadzenButton style="width: 180px; background-color:#414bff94;  margin-right: 5px; margin-left:5px;" IsBusy=@busy Click=@ReverseRight
-                Text="Reverse Right" />
+                          Text="Reverse Right" />
         </div>
     </div>
-<br>
+    <br>
 </div>
 
 
@@ -83,7 +83,7 @@
         distance.Speed = speed;
         distance.Time = time;
         busy = true;
-        await  RobotService.Forward(distance);
+        await RobotService.Forward(distance);
         busy = false;
     }
     protected async Task TurnRight()
@@ -91,7 +91,7 @@
         distance.Speed = speed;
         distance.Time = time;
         busy = true;
-        await  RobotService.TurnRight(distance);
+        await RobotService.TurnRight(distance);
         busy = false;
     }
     protected async Task TurnLeft()
@@ -99,7 +99,7 @@
         distance.Speed = speed;
         distance.Time = time;
         busy = true;
-        await  RobotService.TurnLeft(distance);
+        await RobotService.TurnLeft(distance);
         busy = false;
     }
     protected async Task Reverse()
@@ -107,7 +107,7 @@
         distance.Speed = speed;
         distance.Time = time;
         busy = true;
-        await  RobotService.Reverse(distance);
+        await RobotService.Reverse(distance);
         busy = false;
     }
     protected async Task ReverseRight()
@@ -115,7 +115,7 @@
         distance.Speed = speed;
         distance.Time = time;
         busy = true;
-        await  RobotService.ReverseRight(distance);
+        await RobotService.ReverseRight(distance);
         busy = false;
     }
     protected async Task ReverseLeft()
@@ -123,7 +123,7 @@
         distance.Speed = speed;
         distance.Time = time;
         busy = true;
-        await  RobotService.ReverseLeft(distance);
+        await RobotService.ReverseLeft(distance);
         busy = false;
     }
 
