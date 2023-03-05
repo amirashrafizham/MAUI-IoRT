@@ -6,24 +6,34 @@
         </button>
     </div>
 </div>
-
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
+                <span class="iconify" data-icon="ant-design:dashboard-outlined"
+                      style="font-size: 25px; margin-right:10px" aria-hidden="true"></span> Dashboard
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
+            <NavLink class="nav-link" href="robot">
+                <span class="iconify" data-icon="bi:robot" style="font-size: 25px; margin-right:10px"
+                      aria-hidden=" true"></span>
+                Robot Control Panel
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            <NavLink class="nav-link" href="drone">
+                <span class="iconify" data-icon="eos-icons:drone" style="font-size: 25px; margin-right:10px"
+                      aria-hidden="true"></span> Drone Control Panel
             </NavLink>
         </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="gyroscope">
+                <span class="iconify" data-icon="ic:twotone-sensors" style="font-size: 25px; margin-right:10px"
+                      aria-hidden="true"></span> Accelerometer
+            </NavLink>
+        </div>
+
     </nav>
 </div>
 
